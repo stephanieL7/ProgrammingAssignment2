@@ -32,30 +32,3 @@ cacheSolve <- function(makeCacheMatrix.object, ...) {
   makeCacheMatrix.object$setsolve(i) # sets the solution i to the input object makeCacheMatrix.object, so if the same makeCacheMatrix.object is input, the cached solution will be retrieved 
   i # shows the solution in the console
 }
-
-
-# Testing Matrix Functions
-
-# create simple example matrix from Alan Berger's course post for testing
-m1 <- matrix(c(1/2, -1/4, -1, 3/4), nrow = 2, ncol = 2)
-m1
-
-# see the inverse of m1
-solve(m1)
-
-# test if my functions return the inverse of m1 correctly
-myMatrix_object <- makeCacheMatrix(m1)
-cacheSolve(myMatrix_object)
-# they do
-
-# test if my function gets the cached inverse 
-cacheSolve(myMatrix_object)
-
-# it does
-
-# test if my function correctly solves a new matrix
-n2 <- matrix(c(5/8, -1/8, -7/8, 3/8), nrow = 2, ncol = 2)
-solve(n2)
-myMatrix_object$set(n2)
-cacheSolve(myMatrix_object)
-# it does
